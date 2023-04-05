@@ -162,7 +162,7 @@
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
           
-            <a href="/2023/04/05/hello-world/" class="post-title-link" itemprop="url">Hello World</a>
+            <a href="/2023/04/05/hello-world/" class="post-title-link" itemprop="url">Hexo 搭建 github 博客</a>
         </h2>
 
         <div class="post-meta">
@@ -173,7 +173,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2023-04-05 13:10:57 / Modified: 13:21:44" itemprop="dateCreated datePublished" datetime="2023-04-05T13:10:57+08:00">2023-04-05</time>
+              <time title="Created: 2023-04-05 13:10:57 / Modified: 14:48:05" itemprop="dateCreated datePublished" datetime="2023-04-05T13:10:57+08:00">2023-04-05</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -186,7 +186,7 @@
             </span>
 
           
-            <div class="post-description">hexo create blog</div>
+            <div class="post-description">hexo github 快速搭建博客</div>
 
         </div>
       </header>
@@ -197,19 +197,34 @@
     <div class="post-body" itemprop="articleBody">
 
       
-          <p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-
-<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
+          <h2 id="用-Hexo-Github搭建博客"><a href="#用-Hexo-Github搭建博客" class="headerlink" title="用 Hexo, Github搭建博客"></a>用 Hexo, Github搭建博客</h2><p>  开始前准备:</p>
+<ul>
+<li>在 Github 中创建 <code>&lt;username&gt;.github.io</code> 的 repo。</li>
+<li>查看 <code>https://github.com/&lt;username&gt;/&lt;username&gt;.github.io/settings/pages</code> 是否设置正确了 branch。</li>
+<li>正常会出现 <code>Your site is live at https://&lt;username&gt;.github.io/</code></li>
+</ul>
+<h3 id="使用-Hexo-搭建博客的基本步骤："><a href="#使用-Hexo-搭建博客的基本步骤：" class="headerlink" title="使用 Hexo 搭建博客的基本步骤："></a>使用 Hexo 搭建博客的基本步骤：</h3><ol>
+<li>安装 Node.js 和 Git：在开始之前，您需要在电脑上安装 Node.js 和 Git。macOS 可使用 nvm 安装。如果您已经安装过了，可以跳过这一步。<br>安装 <a target="_blank" rel="noopener" href="https://github.com/nvm-sh/nvm">nvm</a><br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash</span><br></pre></td></tr></table></figure><br>安装 node<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nvm install --lts</span><br></pre></td></tr></table></figure></li>
+<li>在终端中输入以下命令安装 Hexo：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure></li>
+<li>创建一个新的博客项目:<br>创建博客目录<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo init myblog</span><br><span class="line">cd myblog</span><br><span class="line">npm install</span><br></pre></td></tr></table></figure><br>下载主题使用，以 next 主题为例<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/theme-next/hexo-theme-next themes/next</span><br></pre></td></tr></table></figure><br>修改 next 主题配置，以当前博客地址为例，配置项有： <ul>
+<li>scheme: Gemini</li>
+<li>social:GitHub: <a target="_blank" rel="noopener" href="https://github.com/username">https://github.com/username</a></li>
+<li>excerpt_description: false</li>
+<li>scrollpercent: true</li>
+<li>reading_progress:，enable:true</li>
+<li>github_banner:enable: true</li>
+<li>busuanzi_count:enable: true</li>
+</ul>
+</li>
+<li>启动本地服务器，可以在浏览器中访问 <a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000</a> 查看网站：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo s</span><br></pre></td></tr></table></figure></li>
+<li>修改博客配置文件 _config.yml，例如修改博客标题和作者：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">title: XXXX</span><br><span class="line">author: XXXX</span><br></pre></td></tr></table></figure></li>
+<li>发布一篇新文章，可以运行以下命令生成一篇新文章并打开编辑器：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo new &quot;Hello World&quot;</span><br></pre></td></tr></table></figure></li>
+<li>修改新文章，在 source&#x2F;_posts&#x2F; 目录下找到新生成的文章文件，使用 Markdown 语法编写内容。</li>
+<li>生成静态文件，使用以下命令生成静态 HTML 文件：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g</span><br></pre></td></tr></table></figure></li>
+<li>部署博客网站。<br>需修改 _config.yml 文件中的 deploy 配置项为：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">type: git</span><br><span class="line">repo: git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git</span><br><span class="line">branch: main</span><br></pre></td></tr></table></figure><br>部署：<br><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure></li>
+<li>访问 https:&#x2F;&#x2F;<username>.github.io 查看发布的博客。</li>
+</ol>
+<p>发布过程中发现出现主题丢失，使用了 <code>hexo clean &amp; hexo deploy</code> ，<code>hexo g</code>, <code>hexo d</code> 反复做了几次尝试</p>
 
       
     </div>
